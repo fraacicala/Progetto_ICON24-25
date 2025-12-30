@@ -186,6 +186,8 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_filler"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard"/>
     </owl:Class>
     
 
@@ -221,6 +223,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard"/>
     </owl:Class>
     
 
@@ -269,6 +272,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
     </owl:Class>
     
 
@@ -299,6 +303,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante"/>
     </owl:Class>
     
 
