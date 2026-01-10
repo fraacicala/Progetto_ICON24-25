@@ -34,10 +34,10 @@ def run_reasoning():
         episode_list = onto.Episodio.instances()
     for ep in episode_list:
         name = ep.name  # Es. Episode_S01_E01
-        if hasattr(onto, "Episodio_chiave") and ep in onto.Episodio_chiave.instances():
+        if hasattr(onto, "Episodio_eccellente") and ep in onto.Episodio_eccellente.instances():
             target= "Eccellente"
 
-        elif hasattr(onto, "Episodio_filler") and ep in onto.Episodio_filler.instances():
+        elif hasattr(onto, "Episodio_scarso") and ep in onto.Episodio_scarso.instances():
             target = "Scarso"
 
         else:

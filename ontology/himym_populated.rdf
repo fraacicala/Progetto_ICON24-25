@@ -96,7 +96,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Arco_narrativo -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Arco_narrativo">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_narrativo"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_portante"/>
     </owl:Class>
     
 
@@ -104,7 +104,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blackout -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blackout">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Struttura_temporale"/>
     </owl:Class>
     
 
@@ -112,6 +112,14 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Comportamento_tossico -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Comportamento_tossico">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_narrativo"/>
     </owl:Class>
     
@@ -123,6 +131,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_portante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_portante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_narrativo"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio">
@@ -131,9 +147,32 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_chiave -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_buono -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_chiave">
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_buono">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente"/>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_eccellente">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -142,31 +181,15 @@
                         <owl:unionOf rdf:parseType="Collection">
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Arco_narrativo"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Teoria"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_portante"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blackout"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Notizia_spiacevole"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Struttura_temporale"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haOggetto"/>
@@ -174,11 +197,7 @@
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haPersonaggio"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haPersonaggio"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_rilevante"/>
                             </owl:Restriction>
                         </owl:unionOf>
                     </owl:Class>
@@ -186,15 +205,14 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_filler"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_filler -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_filler">
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_scarso">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -203,15 +221,7 @@
                         <owl:unionOf rdf:parseType="Collection">
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Comportamento_tossico"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haElementoNarrativo"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haEvento"/>
-                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_Fallito"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#haPersonaggio"/>
@@ -222,15 +232,6 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio_standard">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
     </owl:Class>
     
@@ -247,15 +248,23 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_Fallito -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_Fallito">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Struttura_temporale"/>
     </owl:Class>
     
 
@@ -263,7 +272,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_rilevante"/>
     </owl:Class>
     
 
@@ -271,8 +280,8 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
     </owl:Class>
     
 
@@ -280,7 +289,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Notizia_spiacevole -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Notizia_spiacevole">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama"/>
     </owl:Class>
     
 
@@ -299,26 +308,42 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_rilevante -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura">
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_rilevante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_rilevante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_trama"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Struttura_temporale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Struttura_temporale">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento"/>
     </owl:Class>
     
@@ -327,7 +352,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Teoria -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Teoria">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_narrativo"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_portante"/>
     </owl:Class>
     
 
@@ -335,7 +360,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Elemento_narrativo"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Debolezza_narrativa"/>
     </owl:Class>
     
 
@@ -370,7 +395,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blitz -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blitz">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -418,7 +443,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Cindy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Cindy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -466,7 +491,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Divorzio_Barney_Robin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Divorzio_Barney_Robin">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
     </owl:NamedIndividual>
     
 
@@ -810,7 +835,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_2_14">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Occhiali_sensoriali"/>
         <haTitolo>Monday Night Football</haTitolo>
     </owl:NamedIndividual>
     
@@ -1243,7 +1267,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_4_18">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Licenziamento"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Licenziamento"/>
         <haTitolo>Old King Clancy</haTitolo>
     </owl:NamedIndividual>
     
@@ -1262,7 +1286,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_4_20">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_temporanea"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_temporanea"/>
         <haTitolo>Mosbius Designs</haTitolo>
     </owl:NamedIndividual>
     
@@ -1823,7 +1847,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_7_08">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_zucca"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_zucca"/>
         <haTitolo>The Slutty Pumpkin Returns</haTitolo>
     </owl:NamedIndividual>
     
@@ -2025,7 +2049,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_8_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_senza_dramma"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_senza_dramma"/>
         <haTitolo>The Autumn of Break-Ups</haTitolo>
     </owl:NamedIndividual>
     
@@ -2065,7 +2089,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_8_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_Barney_Robin"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_Barney_Robin"/>
         <haTitolo>Lobster Crawl</haTitolo>
     </owl:NamedIndividual>
     
@@ -2454,7 +2478,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_origini -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_origini">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
     </owl:NamedIndividual>
     
 
@@ -2582,7 +2606,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#La_Madre -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#La_Madre">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -2654,7 +2678,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Marvin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Marvin">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -2755,14 +2779,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Occhiali_sensoriali -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Occhiali_sensoriali">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#OggettoIconico"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo">
@@ -2790,7 +2806,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_Barney -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_Barney">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
     </owl:NamedIndividual>
     
 
@@ -2798,7 +2814,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_madre -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_madre">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
     </owl:NamedIndividual>
     
 
@@ -2934,7 +2950,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Barney_Nora -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Barney_Nora">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
     </owl:NamedIndividual>
     
 
@@ -2942,7 +2958,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Ted_Robin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Ted_Robin">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
     </owl:NamedIndividual>
     
 
@@ -2950,7 +2966,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_gruppo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_gruppo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
     </owl:NamedIndividual>
     
 
@@ -3006,7 +3022,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Stella -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Stella">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -3014,7 +3030,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Swarley -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Swarley">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
     
 
@@ -3054,7 +3070,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Victoria -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Victoria">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_importante"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
