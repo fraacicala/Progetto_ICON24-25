@@ -392,10 +392,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blitz -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Anticlimax_zucca -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blitz">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_trama"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Anticlimax_zucca">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Becky -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Becky">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante"/>
     </owl:NamedIndividual>
     
 
@@ -403,6 +411,14 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Bob_Barker -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Bob_Barker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Britney_spears -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Britney_spears">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
     </owl:NamedIndividual>
     
@@ -703,6 +719,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_1_22">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Danza_pioggia"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Lily_Marshall"/>
         <haTitolo>Come On</haTitolo>
     </owl:NamedIndividual>
     
@@ -853,6 +870,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_2_16">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scommessa_schiaffi"/>
         <haTitolo>Stuff</haTitolo>
     </owl:NamedIndividual>
     
@@ -1023,6 +1041,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_3_12">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#San_patrizio"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
         <haTitolo>No Tomorrow</haTitolo>
     </owl:NamedIndividual>
     
@@ -1033,6 +1053,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_3_13">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Incontro_Stella"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Britney_spears"/>
         <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Stella"/>
         <haTitolo>Ten Sessions</haTitolo>
     </owl:NamedIndividual>
@@ -1062,6 +1084,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_3_16">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Saga_Robin_Sparkles"/>
         <haTitolo>Sandcastles in the Sand</haTitolo>
     </owl:NamedIndividual>
     
@@ -1071,6 +1094,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_3_17">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Capra"/>
         <haTitolo>The Goat</haTitolo>
     </owl:NamedIndividual>
     
@@ -1147,6 +1171,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_4_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_fallito"/>
         <haTitolo>Shelter Island</haTitolo>
     </owl:NamedIndividual>
     
@@ -1306,6 +1331,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_4_22">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
         <haTitolo>Right Place, Right Time</haTitolo>
     </owl:NamedIndividual>
     
@@ -1408,6 +1434,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_5_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scommessa_schiaffi"/>
         <haTitolo>Slapsgiving 2: Revenge of the Slap</haTitolo>
     </owl:NamedIndividual>
     
@@ -1485,6 +1512,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_5_17">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jennifer_lopez"/>
         <haTitolo>Of Course</haTitolo>
     </owl:NamedIndividual>
     
@@ -1503,7 +1531,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_5_19">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scimmia"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Marshall_scimmia"/>
         <haTitolo>Zoo or False</haTitolo>
     </owl:NamedIndividual>
     
@@ -1595,6 +1623,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_6_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Becky"/>
         <haTitolo>Architect of Destruction</haTitolo>
     </owl:NamedIndividual>
     
@@ -1641,7 +1670,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_6_10">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maledizione_Blitz"/>
-        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blitz"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jorge_Garcia"/>
         <haTitolo>Blitzgiving</haTitolo>
     </owl:NamedIndividual>
     
@@ -1690,7 +1719,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_6_15">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
-        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Honey"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Intervento"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Katy_perry"/>
         <haTitolo>Oh Honey</haTitolo>
     </owl:NamedIndividual>
     
@@ -1727,6 +1757,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_6_19">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Intervento"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Padre_Barney"/>
         <haTitolo>Legendaddy</haTitolo>
     </owl:NamedIndividual>
     
@@ -1847,6 +1879,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_7_08">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Anticlimax_zucca"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_zucca"/>
         <haTitolo>The Slutty Pumpkin Returns</haTitolo>
     </owl:NamedIndividual>
@@ -1857,6 +1890,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_7_09">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scommessa_schiaffi"/>
         <haTitolo>Disaster Averted</haTitolo>
     </owl:NamedIndividual>
     
@@ -2117,6 +2151,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_8_12">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Piano_Barney"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Proposta_Barney_Robin"/>
         <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Playbook"/>
         <haTitolo>The Final Page, Part 2</haTitolo>
@@ -2146,6 +2181,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_8_15">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Saga_Robin_Sparkles"/>
         <haTitolo>P.S. I Love You</haTitolo>
     </owl:NamedIndividual>
     
@@ -2174,6 +2210,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_8_18">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_Ted_Jeanette"/>
         <haTitolo>Weekend at Barney&apos;s</haTitolo>
     </owl:NamedIndividual>
     
@@ -2281,6 +2318,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_9_05">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Gruppo_tossico"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Partita_poker"/>
         <haTitolo>The Poker Game</haTitolo>
     </owl:NamedIndividual>
@@ -2369,6 +2407,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_9_14">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Parodia_Kung_Fu"/>
+        <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maestri_schiaffo"/>
         <haTitolo>Slapsgiving 3: Slappointment in Slapmarra</haTitolo>
     </owl:NamedIndividual>
     
@@ -2388,6 +2427,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_9_16">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_madre"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
         <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ukulele"/>
         <haPersonaggio rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#La_Madre"/>
         <haTitolo>How Your Mother Met Me</haTitolo>
@@ -2444,7 +2484,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episode_9_22">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
+        <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Saga_Robin_Sparkles"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scommessa_schiaffi"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Barney_Robin"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Riscrivere_voti"/>
         <haTitolo>The End of the Aisle</haTitolo>
     </owl:NamedIndividual>
@@ -2457,6 +2499,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Divorzio_Barney_Robin"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_gruppo"/>
+        <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
         <haTitolo>Last Forever, Part 1</haTitolo>
     </owl:NamedIndividual>
     
@@ -2468,6 +2511,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Episodio"/>
         <haElementoNarrativo rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ritorno_Ted_Robin"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Divorzio_Barney_Robin"/>
+        <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Ted_Tracy"/>
         <haEvento rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Morte_madre"/>
         <haOggetto rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Ombrello_giallo"/>
         <haTitolo>Last Forever, Part 2</haTitolo>
@@ -2531,10 +2575,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Honey -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Gruppo_tossico -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Honey">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Gruppo_tossico">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Comportamento_tossico"/>
     </owl:NamedIndividual>
     
 
@@ -2603,6 +2647,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jennifer_lopez -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jennifer_lopez">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jorge_Garcia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Jorge_Garcia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Katy_perry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Katy_perry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#La_Madre -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#La_Madre">
@@ -2667,10 +2735,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maestri_schiaffo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maestri_schiaffo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Personaggio_irrilevante"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maledizione_Blitz -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Maledizione_Blitz">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Teoria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Marshall_scimmia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Marshall_scimmia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta"/>
     </owl:NamedIndividual>
     
 
@@ -2691,10 +2775,34 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Barney_Robin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Barney_Robin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Marshall_Lily -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Marshall_Lily">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Ted_Tracy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_Ted_Tracy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_fallito -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Matrimonio_fallito">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Evento_Fallito"/>
     </owl:NamedIndividual>
     
 
@@ -2718,7 +2826,7 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Mitch -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Mitch">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Guest_star"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Teoria"/>
     </owl:NamedIndividual>
     
 
@@ -2787,6 +2895,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Padre_Barney -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Padre_Barney">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Parodia_Kung_Fu -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Parodia_Kung_Fu">
@@ -2814,6 +2930,14 @@
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_madre -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Passato_madre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Piano_Barney -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Piano_Barney">
         <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Flashback_rivelatore"/>
     </owl:NamedIndividual>
     
@@ -2891,6 +3015,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_Ted_Jeanette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_Ted_Jeanette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Comportamento_tossico"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_temporanea -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Relazione_temporanea">
@@ -2955,6 +3087,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Lily_Marshall -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Lily_Marshall">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_importante"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Ted_Robin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Rottura_Ted_Robin">
@@ -2987,18 +3127,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scherzo_Barney -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#San_patrizio -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scherzo_Barney">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Arco_narrativo"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#San_patrizio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Blackout"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scimmia -->
+    <!-- http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scherzo_Barney -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scimmia">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Trama_piatta"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Scherzo_Barney">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cica/ontologies/2025/11/himym-ontology#Arco_narrativo"/>
     </owl:NamedIndividual>
     
 
