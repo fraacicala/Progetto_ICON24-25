@@ -1,57 +1,42 @@
 import pandas as pd
 import os
-import learning  # Importa il tuo modulo di learning
-import reasoning  # Importa il tuo modulo di reasoning
-# --- IMPORTAZIONI AGGIUNTE (SOLO PER IL PLOTTING) ---
-import matplotlib.pyplot as plt
-import numpy as np
+import learning
+import reasoning
 from sklearn.preprocessing import LabelEncoder
 
-
+# Funzione main.
+# Nella prima parte richiama le funzioni del modulo learning che permettono il caricamento e pre-processing del dataset e
+# l'addestramento del Decision Tree e Random Forest, con la stampa delle relative metriche e grafici.
+# Nella seconda parte richiama le funzioni del modulo reasoning per il caricamento e popolamento dell'ontologia e
+# l'esecuzione del reasoner Hermit. Crea nuova feature "Semantic_class".
+# Nella terza parte riesegue l'addestramento dei modelli, ma sul dataset arricchito da conoscenza semantica.
 def main():
-    """
-    Orchestratore dell'esperimento comparativo ML vs ML+OntoBK.
-    """
-    print("===================================================================")
-    print(" AVVIO PROGETTO: INTEGRAZIONE DI MACHINE LEARNING E CONOSCENZA SEMANTICA")
-    print("===================================================================")
-
-    # --- Configurazione dei percorsi ---
+    print("AVVIO PROGETTO: ")
     dataset_path = os.path.join(os.path.dirname(__file__), 'dataset', 'himym_episodewise.csv')
 
-    # ===================================================================
-    #   SCENARIO 1: ESECUZIONE BASELINE (SOLO MACHINE LEARNING)
-    # ===================================================================
-    print("\n--- [SCENARIO 1] ESECUZIONE MODELLI SU DATASET ORIGINALE ---")
+    print("\n1° parte: esecuzione modelli sul dataset originale...")
 
     dataset_originale = learning.load_dataset(dataset_path)
     X_orig, y_orig = learning.preprocessing_dataset(dataset_originale.copy())
-    feature_names_orig = X_orig.columns  # Prendiamo i nomi delle colonne
 
-    print("\n[INFO] Addestramento e valutazione del Decision Tree (Baseline)...")
+    print("\nAddestramento e valutazione del Decision Tree...")
     dt_model_orig = learning.decisiontree_classifier(X_orig, y_orig)
 
-
-    print("\n[INFO] Addestramento e valutazione del Random Forest (Baseline)...")
+    print("\nAddestramento e valutazione del Random Forest...")
     rf_model_orig = learning.randomforest_classifier(X_orig, y_orig)
 
+    print("\n 1° parte completata.")
 
-    print("\n--- [SCENARIO 1] COMPLETATO ---")
+    print("\n 2° parte: esecuzione ragionamento automatico...")
 
-    # ===================================================================
-    #   FASE DI ARRICCHIMENTO CON CONOSCENZA DI FONDO (BK)
-    # ===================================================================
-    print("\n--- [FASE DI ARRICCHIMENTO] INTEGRAZIONE CONOSCENZA SEMANTICA ---")
-
-    # (Questa sezione rimane identica, non la tocco)
     populated_onto_path = os.path.join(os.path.dirname(__file__), 'ontology', 'himym_populated.rdf')
     if not os.path.exists(populated_onto_path):
-        print("[INFO] Ontologia popolata non trovata. Avvio il processo di popolamento...")
+        print("[Ontologia popolata non trovata. Avvio il processo di popolamento...")
         reasoning.populate_ontology()
-        print("[INFO] Popolamento completato.")
+        print("Popolamento completato.")
     else:
-        print("[INFO] Utilizzo dell'ontologia popolata esistente.")
-    print("[INFO] Avvio del ragionatore semantico per classificare gli episodi...")
+        print("Utilizzo dell'ontologia popolata esistente.")
+    print("Avvio del ragionatore semantico per classificare gli episodi...")
     semantic_results = reasoning.run_reasoning()
     semantic_df = pd.DataFrame(list(semantic_results.items()), columns=['Episode_ID', 'Semantic_Class'])
     dataset_arricchito = dataset_originale.copy()
@@ -59,16 +44,13 @@ def main():
         lambda row: f"Episode_{int(row['Season'])}_{int(row['Episode']):02d}", axis=1
     )
     dataset_arricchito = pd.merge(dataset_arricchito, semantic_df, on='Episode_ID', how='left')
-    print("\n[SUCCESS] Dataset arricchito con la nuova feature 'Semantic_Class'.")
+    print("\nDataset arricchito con la nuova feature 'Semantic_Class'.")
 
-    # ===================================================================
-    #   SCENARIO 2: ESECUZIONE CON DATASET ARRICCHITO (ML + BK)
-    # ===================================================================
-    print("\n--- [SCENARIO 2] ESECUZIONE MODELLI SU DATASET ARRICCHITO CON BK ---")
+    print("\n 2° parte completata.")
 
-    # (Questa sezione rimane identica, non la tocco)
+    print("\n3° parte: esecuzione dei modelli su dataset arricchito con conoscenza di fondo...")
     dataset_arricchito['Semantic_Class'] = dataset_arricchito['Semantic_Class'].fillna(
-        'Non Anotato')  # Aggiungo un riempimento per sicurezza
+        'Non Anotato')
     text_columns = ['Director', 'Writers', 'Verdict', 'Semantic_Class']
     for column in text_columns:
         if column in dataset_arricchito.columns:
@@ -78,21 +60,14 @@ def main():
                                    'Semantic_Class']
     X_arr = dataset_arricchito[columns_features_arricchite]
     y_arr = dataset_arricchito['Verdict']
-    feature_names_arr = X_arr.columns  # Prendiamo i nomi delle colonne
 
-    print("\n[INFO] Addestramento e valutazione del Decision Tree (con BK)...")
+    print("\nAddestramento e valutazione del Decision Tree (con BK)...")
     dt_model_arr = learning.decisiontree_classifier(X_arr, y_arr)
-
 
     print("\n[INFO] Addestramento e valutazione del Random Forest (con BK)...")
     rf_model_arr = learning.randomforest_classifier(X_arr, y_arr)
 
-
-    print("\n--- [SCENARIO 2] COMPLETATO ---")
-    print("\n===================================================================")
-    print(" ESPERIMENTO COMPARATIVO CONCLUSO")
-    print("===================================================================")
-
+    print("\n 3° parte completata. Esperimento concluso.")
 
 if __name__ == "__main__":
     main()

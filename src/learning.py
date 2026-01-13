@@ -95,9 +95,9 @@ def decisiontree_classifier(X, y):
     model = DecisionTreeClassifier(random_state=0)
     param_grid = {
         'criterion': ['gini', 'entropy'],
-        'max_depth': range(1, 11),
-        'min_samples_split': range(2, 21, 2),
-        'min_samples_leaf': range(1, 21, 2)
+        'max_depth': [2, 3, 4, 5, 6],
+        'min_samples_split': [5, 10, 15, 20, 25],
+        'min_samples_leaf': [2, 3, 5, 7, 10, 15]
     }
     grid = GridSearchCV(estimator=model, param_grid=param_grid, cv=inner_loop)
     metrics = ['accuracy', 'precision_weighted', 'recall_weighted', 'f1_weighted']
@@ -128,9 +128,9 @@ def randomforest_classifier(X, y):
     outer_loop = StratifiedKFold(n_splits=5, shuffle=True, random_state=0)
     model = RandomForestClassifier(random_state=0, class_weight='balanced')
     param_grid = {
-        'n_estimators': [50, 100],
+        'n_estimators': [50, 100, 150],
         'criterion': ['gini', 'entropy'],
-        'max_depth': [3, 5, 10],
+        'max_depth': [None, 5, 10, 15],
         'min_samples_split': [2, 5, 10],
         'min_samples_leaf': [1, 2, 5]
     }
