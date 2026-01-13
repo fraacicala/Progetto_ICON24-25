@@ -1,7 +1,5 @@
 import pandas as pd
 import numpy as np
-import sklearn as sk
-from pandas import crosstab
 import matplotlib.pyplot as plt
 from sklearn.model_selection import learning_curve
 from sklearn.ensemble import RandomForestClassifier
