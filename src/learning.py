@@ -103,10 +103,10 @@ def decisiontree_classifier(X, y):
     metrics = ['accuracy', 'precision_weighted', 'recall_weighted', 'f1_weighted']
     nested_results = cross_validate(grid, X, y, cv=outer_loop, scoring=metrics)
     print(
-        f"Accuracy Media:  {nested_results['test_accuracy'].mean():.2%} (+/- {nested_results['test_accuracy'].std():.2%})")
+        f"Accuracy:  {nested_results['test_accuracy'].mean():.2%} (+/- {nested_results['test_accuracy'].std():.2%})")
     print(f"Precision Media: {nested_results['test_precision_weighted'].mean():.2%}")
-    print(f"Recall Media:    {nested_results['test_recall_weighted'].mean():.2%}")
-    print(f"F1-Score Media:  {nested_results['test_f1_weighted'].mean():.2%}")
+    print(f"Recall Medio:    {nested_results['test_recall_weighted'].mean():.2%}")
+    print(f"F1-Score Medio:  {nested_results['test_f1_weighted'].mean():.2%}")
     grid.fit(X, y)
     best_model = grid.best_estimator_
     print(f"Parametri migliori:  {grid.best_params_}")
@@ -138,10 +138,10 @@ def randomforest_classifier(X, y):
     metrics = ['accuracy', 'precision_weighted', 'recall_weighted', 'f1_weighted']
     nested_results = cross_validate(grid, X, y, cv=outer_loop, scoring=metrics)
     print(
-        f"Accuracy Media (Nested):  {nested_results['test_accuracy'].mean():.2%} (+/- {nested_results['test_accuracy'].std():.2%})")
-    print(f"Precision Media (Nested): {nested_results['test_precision_weighted'].mean():.2%}")
-    print(f"Recall Media (Nested):    {nested_results['test_recall_weighted'].mean():.2%}")
-    print(f"F1-Score Media (Nested):  {nested_results['test_f1_weighted'].mean():.2%}")
+        f"Accuracy:  {nested_results['test_accuracy'].mean():.2%} (+/- {nested_results['test_accuracy'].std():.2%})")
+    print(f"Precision Media: {nested_results['test_precision_weighted'].mean():.2%}")
+    print(f"Recall Medio:    {nested_results['test_recall_weighted'].mean():.2%}")
+    print(f"F1-Score Medio:  {nested_results['test_f1_weighted'].mean():.2%}")
     grid.fit(X, y)
     best_model = grid.best_estimator_
     print(f"Parametri migliori:  {grid.best_params_}")
